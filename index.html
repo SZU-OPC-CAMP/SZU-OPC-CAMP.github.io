@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>OPC + Agent AI 原生创业工场</title>
+    <meta name="description" content="OPC + Agent AI 原生创业工场，用项目制训练营连接 AI 原生人才、企业命题、早期项目与投资孵化。">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav container" aria-label="主导航">
+          <a class="brand" href="index.html"><span class="brand-mark">OPC</span><span>Agent AI 原生创业工场</span></a>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
+          <div class="nav-links" id="nav-links">
+            <a href="#model">机制</a>
+            <a href="#projects">项目</a>
+            <a href="#resources">资源</a>
+            <a href="projects.html">项目库</a>
+            <a class="nav-cta" href="#contact">发起合作</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero container">
+          <div>
+            <h1>OPC + Agent AI 原生创业工场</h1>
+            <p>用项目制训练营连接 AI 原生人才、企业命题、早期项目与投资孵化。</p>
+            <div class="hero-actions">
+              <a class="button" href="projects.html">查看项目库</a>
+              <a class="button secondary" href="#contact">合作咨询</a>
+            </div>
+          </div>
+          <aside class="hero-panel" aria-label="OPC 项目制训练营概览">
+            <img src="assets/media/generated/hero-opc-studio.png" alt="OPC 项目工场协作网络插画">
+            <div class="hero-panel__caption">
+              <strong>从一个人、一个 Agent、一个项目开始</strong>
+              <span>训练营产生项目，项目识别人才，社区沉淀关系，孵化放大价值。</span>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section tight container" aria-label="关键数据">
+          <div class="metrics" id="metrics">
+            <div class="metric"><strong>221</strong><span>OPC 双创营兴趣社群人数</span></div>
+            <div class="metric"><strong>118</strong><span>首期训练营报名人数</span></div>
+            <div class="metric"><strong>20</strong><span>首期筛选入营学员</span></div>
+            <div class="metric lift-on-hover"><strong>20</strong><span>第二期项目制成员</span></div>
+          </div>
+        </section>
+
+        <section class="section container" id="model">
+          <h2>把 AI 能力训练成可验证的项目结果</h2>
+          <p class="section-lead">OPC 不是普通培训，也不是等待项目成熟后的孵化器。我们从真实命题、跨专业组队和 Agent 工作流开始，记录团队协作、交付能力与商业验证过程。</p>
+          <div class="loop">
+            <div class="loop-step lift-on-hover"><span>01</span><strong>招募</strong></div>
+            <div class="loop-step lift-on-hover"><span>02</span><strong>混合组队</strong></div>
+            <div class="loop-step lift-on-hover"><span>03</span><strong>Agent 训练</strong></div>
+            <div class="loop-step lift-on-hover"><span>04</span><strong>项目开发</strong></div>
+            <div class="loop-step lift-on-hover"><span>05</span><strong>Demo Day</strong></div>
+            <div class="loop-step lift-on-hover"><span>06</span><strong>孵化对接</strong></div>
+          </div>
+        </section>
+
+        <section class="section container">
+          <h2>三类合作方，各有清晰入口</h2>
+          <p class="section-lead">高校获得项目制创新创业抓手，企业获得 AI 场景验证队伍，投资人获得持续更新的早期 AI 项目源。</p>
+          <div class="partner-grid" id="partner-grid">
+            <article class="partner-tile">
+              <h3>高校合作</h3>
+              <p>把 AI 原生项目能力带进创新创业教育。</p>
+            </article>
+            <article class="partner-tile">
+              <h3>企业共创</h3>
+              <p>用学生团队和 Agent 工作流验证真实业务场景。</p>
+            </article>
+            <article class="partner-tile">
+              <h3>投资对接</h3>
+              <p>持续发现早期 AI 原生项目和可验证团队。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container" id="projects">
+          <div class="project-section-head">
+            <div>
+              <h2>从训练营里长出来的项目</h2>
+              <p class="section-lead">项目按训练营期数沉淀，覆盖金融投资、教育科研、心理健康、AIGC 工具、行业 Agent 和文娱消费。</p>
+            </div>
+            <div class="project-controls" aria-label="项目轮播控制">
+              <div class="cohort-tabs" id="project-cohort-tabs"></div>
+              <div class="carousel-arrows">
+                <button class="arrow-button" type="button" data-project-nav="prev" aria-label="上一组项目">←</button>
+                <button class="arrow-button" type="button" data-project-nav="next" aria-label="下一组项目">→</button>
+              </div>
+            </div>
+          </div>
+          <div class="featured-carousel" id="featured-projects" aria-live="polite"></div>
+        </section>
+
+        <section class="section container" id="resources">
+          <h2>资源网络不是名单，而是项目推进系统</h2>
+          <p class="section-lead">OPC 把导师、企业、投资人、工具链和 Demo Day 编排到同一套项目推进流程里，让合作不是一次活动，而是持续产生项目和人才数据的机制。</p>
+          <ul class="resource-list" id="resource-map"></ul>
+        </section>
+
+        <section class="section container" id="contact">
+          <div class="cta-band">
+            <div>
+              <h2>把你的高校、企业命题或投资资源接入 OPC</h2>
+              <p>我们可以共同设计训练营、发布企业命题、筛选项目团队、组织 Demo Day，并对接后续试点、孵化和投资资源。</p>
+            </div>
+            <a class="button secondary" href="projects.html">先看项目</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">OPC + Agent AI 原生创业工场 · 合作展示页</div>
+      </footer>
+    </div>
+    <script type="module" src="assets/main.js"></script>
+  </body>
+</html>

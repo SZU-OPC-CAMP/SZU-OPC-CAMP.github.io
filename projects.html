@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>项目库 | OPC + Agent AI 原生创业工场</title>
+    <meta name="description" content="浏览 OPC 训练营项目库，查看项目负责人、团队、阶段和资源需求。">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav container" aria-label="主导航">
+          <a class="brand" href="index.html"><span class="brand-mark">OPC</span><span>项目库</span></a>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
+          <div class="nav-links" id="nav-links">
+            <a href="index.html#model">机制</a>
+            <a href="index.html#resources">资源</a>
+            <a href="projects.html">项目库</a>
+            <a class="nav-cta" href="index.html#contact">发起合作</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="container">
+        <section class="page-hero">
+          <h1>学生项目库与合作线索</h1>
+          <p>这里展示训练营中正在形成的 AI 原生项目。合作方可以按方向筛选项目，进入详情查看负责人、团队、阶段和资源需求。</p>
+        </section>
+
+        <section class="section tight" aria-label="项目筛选">
+          <div class="library-toolbar">
+            <div class="filters" id="project-filters">
+              <button class="filter-button is-active" data-filter="全部" type="button">全部</button>
+              <button class="filter-button" data-filter="金融投资" type="button">金融投资</button>
+              <button class="filter-button" data-filter="教育科研" type="button">教育科研</button>
+              <button class="filter-button" data-filter="心理健康" type="button">心理健康</button>
+            </div>
+            <span class="project-count" id="project-count"></span>
+          </div>
+          <div class="project-grid" id="project-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">项目联系方式默认走 OPC 官方对接，负责人授权后可开放直连信息。</div>
+      </footer>
+    </div>
+    <script type="module" src="assets/main.js"></script>
+  </body>
+</html>
