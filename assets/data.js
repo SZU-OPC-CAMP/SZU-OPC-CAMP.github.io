@@ -5,6 +5,42 @@ export const metrics = [
   { value: "20", label: "第二期项目制成员" },
 ];
 
+export const trainingStats = {
+  source: "第一期118名学生信息.xlsx",
+  total: 118,
+  highlights: [
+    { value: "118", label: "第一期报名人数" },
+    { value: "30", label: "大二学生最多" },
+    { value: "49", label: "电子信息相关学院" },
+    { value: "20", label: "首期筛选入营" },
+  ],
+  grade: [
+    { label: "大二", value: 30 },
+    { label: "大一", value: 29 },
+    { label: "研究生及以上", value: 29 },
+    { label: "大三", value: 24 },
+    { label: "高年级本科", value: 4 },
+    { label: "其他/未填", value: 2 },
+  ],
+  college: [
+    { label: "电子与信息工程学院", value: 49 },
+    { label: "管理学院", value: 12 },
+    { label: "计算机与软件学院", value: 11 },
+    { label: "人工智能学院", value: 9 },
+    { label: "经济/金融相关", value: 8 },
+    { label: "物理与光电工程学院", value: 5 },
+    { label: "其他学院与方向", value: 24 },
+  ],
+  background: [
+    { label: "电子信息/通信/光电", value: 55 },
+    { label: "计算机/软件/AI", value: 20 },
+    { label: "经管/金融/创业", value: 21 },
+    { label: "设计/建筑/传媒/人文", value: 13 },
+    { label: "医学/生医/公益健康", value: 3 },
+    { label: "其他交叉背景", value: 6 },
+  ],
+};
+
 export const partners = [
   {
     title: "高校合作",

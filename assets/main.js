@@ -1,4 +1,4 @@
-import { metrics, partners, projects, resourceMap } from "./data.js";
+import { metrics, partners, projects, resourceMap, trainingStats } from "./data.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -45,6 +45,62 @@ function renderPartners() {
       <ul>${partner.points.map((point) => `<li>${point}</li>`).join("")}</ul>
     </article>
   `).join("");
+}
+
+function statBar(item, total) {
+  const percent = Math.round((item.value / total) * 100);
+  return `
+    <li class="stat-bar lift-on-hover">
+      <div class="stat-bar__label">
+        <span>${item.label}</span>
+        <strong>${item.value} 人</strong>
+      </div>
+      <div class="stat-bar__track" aria-hidden="true">
+        <span style="width: ${percent}%"></span>
+      </div>
+    </li>
+  `;
+}
+
+function renderTrainingStats() {
+  const section = $("#camp-stats");
+  if (!section) return;
+
+  const highlights = $("#camp-stats-highlights");
+  const grade = $("#camp-stats-grade");
+  const college = $("#camp-stats-college");
+  const background = $("#camp-stats-background");
+  const source = $("#camp-stats-source");
+
+  if (highlights) {
+    highlights.innerHTML = trainingStats.highlights.map((item) => `
+      <div class="stat-kpi lift-on-hover">
+        <strong>${item.value}</strong>
+        <span>${item.label}</span>
+      </div>
+    `).join("");
+  }
+
+  if (grade) {
+    grade.innerHTML = trainingStats.grade.map((item) => statBar(item, trainingStats.total)).join("");
+  }
+
+  if (college) {
+    college.innerHTML = trainingStats.college.map((item) => statBar(item, trainingStats.total)).join("");
+  }
+
+  if (background) {
+    background.innerHTML = trainingStats.background.map((item) => `
+      <li class="background-chip lift-on-hover">
+        <span>${item.label}</span>
+        <strong>${item.value} 人</strong>
+      </li>
+    `).join("");
+  }
+
+  if (source) {
+    source.textContent = `数据来源：${trainingStats.source}，仅展示聚合统计。`;
+  }
 }
 
 function renderFeaturedProjects() {
@@ -201,6 +257,7 @@ function initNav() {
 
 renderMetrics();
 renderPartners();
+renderTrainingStats();
 renderFeaturedProjects();
 renderResources();
 renderProjectLibrary();

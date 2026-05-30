@@ -55,9 +55,22 @@ for (const project of projectData) {
 assert.match(index, /id="project-cohort-tabs"/);
 assert.match(index, /data-project-nav="prev"/);
 assert.match(index, /data-project-nav="next"/);
+assert.match(index, /id="camp-stats"/);
+assert.match(index, /id="camp-stats-grade"/);
+assert.match(index, /id="camp-stats-college"/);
+assert.match(index, /id="camp-stats-background"/);
 
 const styles = await text("assets/styles.css");
 assert.match(styles, /\.lift-on-hover:hover/);
 assert.match(styles, /translateY\(-/);
+
+const { trainingStats } = await import(
+  `data:text/javascript;charset=utf-8,${encoded}`
+);
+assert.equal(trainingStats.total, 118);
+assert.equal(trainingStats.grade.reduce((sum, item) => sum + item.value, 0), 118);
+assert.ok(trainingStats.college.length >= 6);
+assert.ok(trainingStats.background.length >= 5);
+assert.ok(trainingStats.source.includes("第一期118名学生信息"));
 
 console.log("site structure tests passed");
