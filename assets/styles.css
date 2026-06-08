@@ -807,6 +807,13 @@ img {
   gap: 14px;
 }
 
+.project-card__team {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
 .project-card__github {
   display: inline-flex;
   align-items: center;

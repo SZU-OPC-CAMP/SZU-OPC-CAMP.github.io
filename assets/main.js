@@ -24,6 +24,7 @@ function projectCard(project) {
         </div>
         <h3>${project.title}</h3>
         <p>${project.summary}</p>
+        <div class="project-card__team">${project.team.join(" / ")}</div>
         <div class="project-card__foot">
           <a class="text-link" href="project.html?id=${project.id}">查看项目详情</a>
           ${githubLink}
@@ -250,8 +251,8 @@ function renderProjectDetail() {
         <strong>${project.owner}</strong>
       </div>
       <div class="contact-bar-item">
-        <span>团队规模</span>
-        <strong>${project.team.length} 人</strong>
+        <span>团队成员</span>
+        <strong>${project.team.join(" / ")}</strong>
       </div>
       ${project.github ? `<div class="contact-bar-item">
         <span>开源仓库</span>
