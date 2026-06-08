@@ -400,6 +400,17 @@ img {
   font-size: 20px;
 }
 
+.model-extra {
+  margin-top: 46px;
+}
+
+.model-extra h3 {
+  margin: 46px 0 22px;
+  font-size: clamp(28px, 3.6vw, 48px);
+  line-height: 1.05;
+  font-weight: 760;
+}
+
 .model-showcase {
   display: grid;
   grid-template-columns: 1fr;
