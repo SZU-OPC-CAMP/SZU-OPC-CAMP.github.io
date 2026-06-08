@@ -4,6 +4,12 @@ const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 
 function projectCard(project) {
+  const githubLink = project.github ? `
+    <a class="project-card__github" href="${project.github}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" aria-label="查看 ${project.title} 的 GitHub 仓库">
+      <svg class="github-icon" viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8z"></path></svg>
+      GitHub
+    </a>
+  ` : "";
   return `
     <article class="project-card lift-on-hover" data-category="${project.category}" data-cohort="${project.cohort}">
       <a class="project-card__media" href="project.html?id=${project.id}" aria-label="查看 ${project.title}">
@@ -18,7 +24,10 @@ function projectCard(project) {
         </div>
         <h3>${project.title}</h3>
         <p>${project.summary}</p>
-        <a class="text-link" href="project.html?id=${project.id}">查看项目详情</a>
+        <div class="project-card__foot">
+          <a class="text-link" href="project.html?id=${project.id}">查看项目详情</a>
+          ${githubLink}
+        </div>
       </div>
     </article>
   `;
@@ -200,9 +209,18 @@ function renderProjectDetail() {
   const id = new URLSearchParams(window.location.search).get("id") || projects[0].id;
   const project = projects.find((item) => item.id === id) || projects[0];
   document.title = `${project.title} | OPC 项目库`;
+  const videoCard = project.video ? `
+      <article class="lift-on-hover detail-video-card">
+        <h2>项目展示视频</h2>
+        <video controls preload="metadata" poster="${project.image}">
+          <source src="${project.video}" type="video/mp4">
+          当前浏览器不支持视频播放，请下载视频文件查看。
+        </video>
+      </article>
+  ` : "";
 
   node.innerHTML = `
-    <section class="detail-hero">
+    <section class="detail-hero detail-hero--text-only">
       <div>
         <a class="back-link" href="projects.html">返回项目库</a>
         <div class="meta-row detail-meta">
@@ -212,12 +230,39 @@ function renderProjectDetail() {
         <h1>${project.title}</h1>
         <p>${project.summary}</p>
       </div>
-      <figure>
-        <img src="${project.image}" alt="${project.title}">
-      </figure>
     </section>
 
-    <section class="detail-grid">
+    <section class="detail-contact-bar container">
+      <div class="contact-bar-item">
+        <span>所属期数</span>
+        <strong>${project.cohort}</strong>
+      </div>
+      <div class="contact-bar-item">
+        <span>项目类别</span>
+        <strong>${project.category}</strong>
+      </div>
+      <div class="contact-bar-item">
+        <span>当前阶段</span>
+        <strong>${project.stage}</strong>
+      </div>
+      <div class="contact-bar-item">
+        <span>负责人</span>
+        <strong>${project.owner}</strong>
+      </div>
+      <div class="contact-bar-item">
+        <span>团队规模</span>
+        <strong>${project.team.length} 人</strong>
+      </div>
+      ${project.github ? `<div class="contact-bar-item">
+        <span>开源仓库</span>
+        <a class="contact-bar-link" href="${project.github}" target="_blank" rel="noopener noreferrer">
+          <svg class="github-icon" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8z"></path></svg>
+          <strong>GitHub</strong>
+        </a>
+      </div>` : ""}
+    </section>
+
+    <section class="detail-grid detail-grid--with-poster">
       <article class="lift-on-hover">
         <h2>解决的问题</h2>
         <p>${project.problem}</p>
@@ -226,17 +271,13 @@ function renderProjectDetail() {
         <h2>项目方案</h2>
         <p>${project.solution}</p>
       </article>
-      <aside class="contact-panel lift-on-hover">
-        <h2>负责人</h2>
-        <dl>
-          <dt>项目负责人</dt>
-          <dd>${project.owner}</dd>
-          <dt>联系方式</dt>
-          <dd>${project.contact}</dd>
-          <dt>团队成员</dt>
-          <dd>${project.team.join(" / ")}</dd>
-        </dl>
-      </aside>
+      <article class="lift-on-hover detail-poster-card">
+        <h2>项目海报</h2>
+        <figure>
+          <img src="${project.image}" alt="${project.title}">
+        </figure>
+      </article>
+      ${videoCard}
       <article class="wide-card lift-on-hover">
         <h2>正在寻找的资源</h2>
         <div class="tag-list">${project.resources.map((item) => `<span>${item}</span>`).join("")}</div>
@@ -247,18 +288,17 @@ function renderProjectDetail() {
 
 function mentorCard(mentor) {
   return `
-    <article class="mentor-card lift-on-hover">
+    <a class="mentor-card lift-on-hover" href="${mentor.homepage}" target="_blank" rel="noopener noreferrer" aria-label="${mentor.name} 个人主页">
       <div class="mentor-card__head">
-        <div class="mentor-avatar" aria-hidden="true">${mentor.name.charAt(0)}</div>
+        <img class="mentor-avatar" src="${mentor.avatar}" alt="${mentor.name}" loading="lazy">
         <div class="mentor-card__meta">
-          <h3>${mentor.name}</h3>
+          <span class="mentor-name">${mentor.name}</span>
           <span class="mentor-title">${mentor.title}</span>
         </div>
       </div>
-      <p class="mentor-lab">${mentor.lab}</p>
       <p class="mentor-research">${mentor.research}</p>
-      <a class="mentor-email" href="mailto:${mentor.email}">${mentor.email}</a>
-    </article>
+      <span class="mentor-email">${mentor.email}</span>
+    </a>
   `;
 }
 

@@ -59,7 +59,7 @@ export const partners = [
   },
 ];
 
-export const projects = [
+const firstPhaseProjects = [
   {
     id: "campus-job-agent",
     title: "校招岗位 AI 聚合助手",
@@ -120,13 +120,16 @@ export const projects = [
     resources: ["文旅内容源", "地图与路线能力", "本地商家合作", "语音交互设计"],
     team: ["杨文韬"],
   },
+];
+
+const secondPhaseProjects = [
   {
     id: "investor-match",
     title: "投资人与项目对接平台",
     cohort: "第二期项目",
     category: "金融投资",
     stage: "组队中",
-    owner: "田宇威",
+    owner: "张胜利",
     contact: "OPC 官方对接 / 负责人授权后开放",
     image: "assets/media/generated/investor-match.png",
     summary: "基于微信智能体的小型项目投融资对接平台，支持项目方提交 BP，投资人在线反馈和筛选。",
@@ -141,13 +144,15 @@ export const projects = [
     cohort: "第二期项目",
     category: "教育科研",
     stage: "需求验证",
-    owner: "刘可",
+    owner: "王滔滔",
     contact: "OPC 官方对接 / 负责人授权后开放",
+    github: "https://github.com/1liusho/TopicMap-Agent",
     image: "assets/media/generated/research-copilot.png",
     summary: "面向本科生和低年级研究生的科研训练平台，从兴趣输入到论文推荐、概念解释和阅读计划。",
     problem: "学生第一次进入科研时，很难把兴趣方向转化为文献脉络、开题想法和可执行计划。",
     solution: "结合论文检索、知识库和 Agent 工作流，生成阅读路线、文献笔记和研究问题草案。",
     resources: ["高校导师", "论文数据库", "RAG 技术支持", "科研内容运营"],
+    video: "assets/media/videos/research-copilot-demo.mp4",
     team: ["刘可", "黄德可", "殷诗程", "张思琪"],
   },
   {
@@ -156,7 +161,7 @@ export const projects = [
     cohort: "第二期项目",
     category: "心理健康",
     stage: "概念设计",
-    owner: "曾玲芸",
+    owner: "王滔滔",
     contact: "OPC 官方对接 / 负责人授权后开放",
     image: "assets/media/generated/mental-journal.png",
     summary: "轻量级情绪记录工具，帮助学生总结情绪变化、获得舒缓建议，并在高风险表达时提醒专业求助。",
@@ -171,7 +176,7 @@ export const projects = [
     cohort: "第二期项目",
     category: "AIGC 工具",
     stage: "原型中",
-    owner: "李康颀",
+    owner: "刘芳",
     contact: "OPC 官方对接 / 负责人授权后开放",
     image: "assets/media/generated/beammind.png",
     summary: "通过自然语言或照片生成适合拼豆表达的图案，并转换成真实可拼的图纸。",
@@ -182,17 +187,19 @@ export const projects = [
   },
   {
     id: "wireless-agent",
-    title: "无线通信智能体平台",
+    title: "无线智能体",
     cohort: "第二期项目",
     category: "行业 Agent",
-    stage: "组队中",
-    owner: "陈泓帆",
+    stage: "MVP 验证中",
+    owner: "童景文",
     contact: "OPC 官方对接 / 负责人授权后开放",
-    image: "assets/media/generated/wireless-agent.png",
-    summary: "面向无线通信方向学生、网络工程师和科研人员的智能问答与报告交付平台。",
-    problem: "无线通信知识分散在课程、标准、论文和工程案例中，学习和交付成本高。",
-    solution: "结合领域知识库和 Agent 能力，提供习题解答、标准检索、论文速递和报告生成。",
+    github: "https://github.com/syj-sz/WirelessAgent-Project",
+    image: "assets/media/generated/wireless-agent-poster.png",
+    summary: "依托大语言模型智能体能力，结合无线通信领域课程知识、3GPP/ITU 标准文档、前沿论文和工程案例，为学生、网络工程师与科研人员提供习题解答、标准检索、论文速递、报告生成与网络规划等 AI 辅助服务。自研 MCTS 工序优化引擎，WCHW 评测基准覆盖6大核心主题 449 道习题，四维评分体系准确率达 77.94%，较基线提升 +19.60%。",
+    problem: "无线通信知识高度分散在课程教材、3GPP/ITU 标准文档、前沿论文和工程案例中，学生和工程师需要同时翻阅多个来源，学习曲线陡峭；科研人员在文献调研和实验报告撰写上投入大量重复性劳动；行业缺乏针对无线通信领域的专业 Agent 评测基准，难以量化评估 AI 辅助效果。",
+    solution: "1）习题解答：覆盖信号与系统、通信原理、MIMO、OFDM、信道编码等核心课程，支持 LaTeX 输入与分步推导；2）标准检索：3GPP/ITU/IEEE 标准文档语义检索与自然语言查询；3）论文速递：arXiv/JSAC/TWC 等每日抓取、中文摘要生成与研究方向定制推送；4）报告生成：实验报告/技术调研/方案设计自动生成与多格式导出；5）网络规划：基站部署方案生成、网络切片配置、链路预算与覆盖评估。引入领域自适应 MCTS 算法实现工作流与工具的联合自动优化。",
     resources: ["无线通信导师", "标准文档资源", "后端开发", "企业工程案例"],
+    video: "assets/media/videos/wireless-agent-demo.mp4",
     team: ["陈泓帆", "肖婧羽", "邓卉彤", "李慧", "宋熠杰", "薛泽扬"],
   },
   {
@@ -201,16 +208,20 @@ export const projects = [
     cohort: "第二期项目",
     category: "文娱消费",
     stage: "概念设计",
-    owner: "王宁",
+    owner: "吴晓晓",
     contact: "OPC 官方对接 / 负责人授权后开放",
+    github: "https://github.com/tianmidu/GuFriend",
     image: "assets/media/generated/gu-you.png",
     summary: "面向 Z 世代二次元爱好者的兴趣社交、谷子交易、IP 情报和收藏管理平台。",
     problem: "谷圈交易链路复杂、信息分散、真假难辨，用户需要更可信的兴趣社区和交易辅助。",
     solution: "整合圈层社区、智能估价、防伪识别、发售提醒、线下地图和虚拟谷柜。",
     resources: ["移动端开发", "社区运营", "IP/店铺 BD", "推荐算法与图像识别"],
+    video: "assets/media/videos/gu-you-demo.mp4",
     team: ["王宁", "田定伟"],
   },
 ];
+
+export const projects = [...secondPhaseProjects, ...firstPhaseProjects];
 
 export const resourceMap = [
   "高校导师与课程共建",
@@ -228,7 +239,9 @@ export const mentors = [
     title: "教授",
     email: "zsl@szu.edu.cn",
     lab: "PLAN Lab, Shenzhen University",
-    research: "LLM agent applications, agent-network architecture, and digital assets/Web3",
+    avatar: "assets/media/generated/shengli-zhang.webp",
+    homepage: "https://ceie.szu.edu.cn/info/1017/2953.htm",
+    research: "大语言模型智能体应用、智能体网络架构、数字资产与 Web3",
   },
   {
     id: "taotao-wang",
@@ -236,7 +249,9 @@ export const mentors = [
     title: "副教授",
     email: "ttwang@szu.edu.cn",
     lab: "PLAN Lab, Shenzhen University",
-    research: "blockchain and Web 3.0, trustworthy AI, wireless communications, and multi-agent systems",
+    avatar: "assets/media/generated/taotao-wang.webp",
+    homepage: "https://ceie.szu.edu.cn/info/1018/2044.htm",
+    research: "区块链与 Web 3.0、可信 AI、无线通信、多智能体系统",
   },
   {
     id: "xiaoxiao-wu",
@@ -244,7 +259,9 @@ export const mentors = [
     title: "副教授",
     email: "xxwu.eesissi@szu.edu.cn",
     lab: "PLAN Lab, Shenzhen University",
-    research: "social network data mining, distributed algorithms, signal processing, and AI-related applications",
+    avatar: "assets/media/generated/xiaoxiao-wu.webp",
+    homepage: "https://ceie.szu.edu.cn/info/1018/1842.htm",
+    research: "社交网络数据挖掘、分布式算法、信号处理、人工智能相关应用",
   },
   {
     id: "fang-liu",
@@ -252,7 +269,9 @@ export const mentors = [
     title: "助理教授",
     email: "liuf@szu.edu.cn",
     lab: "PLAN Lab, Shenzhen University",
-    research: "wireless communications, IoT, and AI-enabled networked systems",
+    avatar: "assets/media/generated/fang-liu.webp",
+    homepage: "https://ceie.szu.edu.cn/info/1019/3402.htm",
+    research: "无线通信、物联网、AI 赋能网络系统",
   },
   {
     id: "jingwen-tong",
@@ -260,7 +279,9 @@ export const mentors = [
     title: "助理教授",
     email: "eejwentong@szu.edu.cn",
     lab: "PLAN Lab, Shenzhen University",
-    research: "LLM-based AI agents, multi-armed bandits, and wireless network optimization",
+    avatar: "assets/media/generated/jingwen-tong.webp",
+    homepage: "https://ceie.szu.edu.cn/info/1019/5082.htm",
+    research: "基于大语言模型的 AI 智能体、多臂老虎机、无线网络优化",
   },
 ];
 
@@ -273,7 +294,7 @@ export const demoDayProjects = [
     video: null,
     summary: "基于微信智能体的小型项目投融资对接平台，支持项目方提交 BP，投资人在线反馈和筛选。",
     image: "assets/media/generated/investor-match.png",
-    owner: "田宇威",
+    owner: "张胜利",
     team: ["田宇威", "简皓宏", "冯柯宇"],
   },
   {
@@ -284,7 +305,7 @@ export const demoDayProjects = [
     video: true,
     summary: "面向本科生和低年级研究生的科研训练平台，从兴趣输入到论文推荐、概念解释和阅读计划。",
     image: "assets/media/generated/research-copilot.png",
-    owner: "刘可",
+    owner: "王滔滔",
     team: ["刘可", "黄德可", "殷诗程", "张思琪"],
   },
   {
@@ -295,7 +316,7 @@ export const demoDayProjects = [
     video: null,
     summary: "轻量级情绪记录工具，帮助学生总结情绪变化、获得舒缓建议，并在高风险表达时提醒专业求助。",
     image: "assets/media/generated/mental-journal.png",
-    owner: "曾玲芸",
+    owner: "王滔滔",
     team: ["曾玲芸", "祝欣缘", "林彬城", "谭曾悦"],
   },
   {
@@ -306,7 +327,7 @@ export const demoDayProjects = [
     video: null,
     summary: "通过自然语言或照片生成适合拼豆表达的图案，并转换成真实可拼的图纸。",
     image: "assets/media/generated/beammind.png",
-    owner: "李康颀",
+    owner: "刘芳",
     team: ["李康颀", "刘思利", "徐一鹏"],
   },
   {
@@ -316,8 +337,8 @@ export const demoDayProjects = [
     poster: "assets/media/generated/wireless-agent-poster.png",
     video: true,
     summary: "面向无线通信方向学生、网络工程师和科研人员的智能问答与报告交付平台。",
-    image: "assets/media/generated/wireless-agent.png",
-    owner: "陈泓帆",
+    image: "assets/media/generated/wireless-agent-poster.png",
+    owner: "童景文",
     team: ["陈泓帆", "肖婧羽", "邓卉彤", "李慧", "宋熠杰", "薛泽扬"],
   },
   {
@@ -328,7 +349,7 @@ export const demoDayProjects = [
     video: true,
     summary: "面向 Z 世代二次元爱好者的兴趣社交、谷子交易、IP 情报和收藏管理平台。",
     image: "assets/media/generated/gu-you.png",
-    owner: "王宁",
+    owner: "吴晓晓",
     team: ["王宁", "田定伟"],
   },
 ];
