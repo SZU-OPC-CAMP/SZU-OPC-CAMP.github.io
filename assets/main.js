@@ -1,4 +1,4 @@
-import { metrics, partners, projects, resourceMap, trainingStats } from "./data.js";
+import { cohort3Projects, demoDayProjects, mentors, metrics, partners, projects, resourceMap, trainingStats } from "./data.js";
 
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
@@ -245,6 +245,84 @@ function renderProjectDetail() {
   `;
 }
 
+function mentorCard(mentor) {
+  return `
+    <article class="mentor-card lift-on-hover">
+      <div class="mentor-card__head">
+        <div class="mentor-avatar" aria-hidden="true">${mentor.name.charAt(0)}</div>
+        <div class="mentor-card__meta">
+          <h3>${mentor.name}</h3>
+          <span class="mentor-title">${mentor.title}</span>
+        </div>
+      </div>
+      <p class="mentor-lab">${mentor.lab}</p>
+      <p class="mentor-research">${mentor.research}</p>
+      <a class="mentor-email" href="mailto:${mentor.email}">${mentor.email}</a>
+    </article>
+  `;
+}
+
+function renderMentors() {
+  const node = $("#mentor-grid");
+  if (!node) return;
+  node.innerHTML = mentors.map(mentorCard).join("");
+}
+
+function demoDayCard(project) {
+  const links = [];
+  if (project.github) {
+    links.push(`<a class="demo-day-link" href="${project.github}" target="_blank" rel="noopener noreferrer">GitHub</a>`);
+  }
+  if (project.poster) {
+    links.push(`<a class="demo-day-link" href="${project.poster}" target="_blank">宣传海报</a>`);
+  }
+  if (project.video) {
+    links.push(`<span class="demo-day-badge">含展示视频</span>`);
+  }
+  return `
+    <article class="demo-day-card lift-on-hover">
+      <a class="demo-day-card__media" href="project.html?id=${project.id}" aria-label="查看 ${project.title}">
+        <img src="${project.image}" alt="${project.title}">
+      </a>
+      <div class="demo-day-card__body">
+        <h3>${project.title}</h3>
+        <p>${project.summary}</p>
+        <div class="demo-day-links">${links.join("")}</div>
+        <div class="demo-day-team">团队：${project.team.join(" / ")}</div>
+      </div>
+    </article>
+  `;
+}
+
+function renderDemoDay() {
+  const node = $("#demo-day-grid");
+  if (!node) return;
+  node.innerHTML = demoDayProjects.map(demoDayCard).join("");
+}
+
+function cohort3Item(project) {
+  const team = project.team.length > 0 ? project.team.join(" / ") : "待定";
+  return `
+    <li class="cohort3-item lift-on-hover">
+      <div class="cohort3-item__main">
+        <h3>${project.title}</h3>
+        ${project.summary ? `<p>${project.summary}</p>` : ""}
+      </div>
+      <div class="cohort3-item__team">${team}</div>
+    </li>
+  `;
+}
+
+function renderCohort3() {
+  const node = $("#cohort3-list");
+  if (!node) return;
+  node.innerHTML = `
+    <ul class="cohort3-ul">
+      ${cohort3Projects.map(cohort3Item).join("")}
+    </ul>
+  `;
+}
+
 function initNav() {
   const toggle = $("#nav-toggle");
   const links = $("#nav-links");
@@ -258,8 +336,11 @@ function initNav() {
 renderMetrics();
 renderPartners();
 renderTrainingStats();
+renderMentors();
 renderFeaturedProjects();
+renderDemoDay();
 renderResources();
+renderCohort3();
 renderProjectLibrary();
 renderProjectDetail();
 initNav();

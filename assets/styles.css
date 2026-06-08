@@ -952,3 +952,242 @@ img {
     padding: 28px;
   }
 }
+
+/* Mentor wall */
+.mentor-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+.mentor-card {
+  display: grid;
+  gap: 14px;
+  padding: 24px;
+  border: 1px solid rgba(105, 89, 190, 0.13);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
+    rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.mentor-card__head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mentor-avatar {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2878ff, #8f4dff);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mentor-card__meta h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+}
+
+.mentor-title {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.mentor-lab {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.mentor-research {
+  margin: 0;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.mentor-email {
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 650;
+  word-break: break-all;
+}
+
+/* Demo Day */
+.demo-day-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.demo-day-card {
+  overflow: hidden;
+  border: 1px solid rgba(105, 89, 190, 0.13);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
+    rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.demo-day-card:hover {
+  border-color: rgba(124, 77, 255, 0.3);
+}
+
+.demo-day-card__media {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--soft-blue);
+}
+
+.demo-day-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(1.02) brightness(1.04);
+  transition: transform 500ms ease;
+}
+
+.demo-day-card:hover img {
+  transform: scale(1.04);
+}
+
+.demo-day-card__body {
+  padding: 24px;
+}
+
+.demo-day-card__body h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #111827;
+}
+
+.demo-day-card__body p {
+  min-height: 72px;
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.68;
+}
+
+.demo-day-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.demo-day-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 650;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.demo-day-link:hover {
+  border-color: rgba(124, 77, 255, 0.34);
+  background: rgba(124, 77, 255, 0.12);
+}
+
+.demo-day-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(124, 77, 255, 0.08);
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.demo-day-team {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Cohort 3 */
+.cohort3-ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cohort3-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: 22px 28px;
+  border: 1px solid rgba(105, 89, 190, 0.13);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
+    rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.cohort3-item__main h3 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+
+.cohort3-item__main p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cohort3-item__team {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+@media (max-width: 980px) {
+  .mentor-grid,
+  .demo-day-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .mentor-grid,
+  .demo-day-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cohort3-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cohort3-item__team {
+    white-space: normal;
+  }
+}
