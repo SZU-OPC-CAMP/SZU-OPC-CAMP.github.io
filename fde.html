@@ -143,6 +143,35 @@
         color: var(--muted);
         line-height: 1.8;
       }
+      .fde-method-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .fde-method-card {
+        padding: 30px;
+        border: 1px solid rgba(105, 89, 190, 0.13);
+        border-radius: var(--radius);
+        background: rgba(255, 255, 255, 0.82);
+      }
+      .fde-method-card span {
+        display: inline-block;
+        margin-bottom: 12px;
+        color: var(--accent);
+        font-family: "Cascadia Mono", Consolas, monospace;
+        font-size: 13px;
+        font-weight: 700;
+      }
+      .fde-method-card h3 {
+        margin: 0 0 14px;
+        font-size: 24px;
+      }
+      .fde-method-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
       @media (max-width: 980px) {
         .fde-flow {
           grid-template-columns: repeat(3, 1fr);
@@ -150,7 +179,8 @@
         .fde-cta-band {
           grid-template-columns: 1fr;
         }
-        .fde-info-grid {
+        .fde-info-grid,
+        .fde-method-grid {
           grid-template-columns: 1fr;
         }
       }
@@ -184,7 +214,7 @@
         <section class="fde-hero container">
           <div class="fde-badge">第三期热招中 · 全程免费</div>
           <h1>「普蓝」OPC + Agent 双创营<br>FDE 技能培训</h1>
-          <p>AI Agent 正在成为连接技术、业务与商业落地的新桥梁。<strong>FDE（前端部署工程师）</strong>是目前最典型的岗位，需要深入真实业务场景，完成需求访谈、流程拆解、Agent 方案设计、MVP 开发和客户反馈迭代。电子与信息工程学院张胜利老师团队面向校内学生开设本训练营，已完成两期培训，取得了非常好的学生反馈以及行业影响。</p>
+          <p>AI Agent 正在成为连接技术、业务与商业落地的新桥梁。<strong>FDE（AI 落地型工程师）</strong>不是单纯写代码，也不是只做售前或产品，而是深入真实企业现场，完成需求访谈、流程拆解、Agent / RAG / 自动化方案设计、MVP 交付和商业化验证。电子与信息工程学院张胜利老师团队面向校内学生开设本训练营，已完成两期培训，并持续对接企业命题、行业导师和项目孵化资源。</p>
           <div class="hero-actions">
             <a class="button" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">填写报名表</a>
             <a class="button secondary" href="#contact">扫码进群</a>
@@ -193,23 +223,23 @@
 
         <section class="section container">
           <h2>实战流程</h2>
-          <p class="section-lead">不只是教大家使用 AI 工具，更是帮助同学们学习从案例到交付的完整实战流程。</p>
+          <p class="section-lead">训练营不只是教大家使用 AI 工具，而是把会议纪要中沉淀的 FDE 方法论转成项目制训练：从模糊需求开始，走完需求澄清、流程建模、方案设计、MVP 开发、Demo 演示和企业反馈。</p>
           <div class="fde-flow">
-            <div class="fde-flow-step lift-on-hover"><span>Step 01</span><strong>FDE 案例研讨</strong></div>
-            <div class="fde-flow-step lift-on-hover"><span>Step 02</span><strong>需求拆解</strong></div>
-            <div class="fde-flow-step lift-on-hover"><span>Step 03</span><strong>Agent 方案设计</strong></div>
-            <div class="fde-flow-step lift-on-hover"><span>Step 04</span><strong>MVP 开发</strong></div>
-            <div class="fde-flow-step lift-on-hover"><span>Step 05</span><strong>Demo 演示</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 01</span><strong>行业案例研讨</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 02</span><strong>需求访谈与流程拆解</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 03</span><strong>Agent 工作流设计</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 04</span><strong>1-2 周 Demo / MVP</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 05</span><strong>企业评估与项目孵化</strong></div>
           </div>
         </section>
 
         <section class="section container">
           <h2>课程简介</h2>
-          <p class="section-lead">本次训练营将重点引入 FDE 案例研讨，通过真实业务场景驱动学习。</p>
+          <p class="section-lead">本次训练营将重点引入 FDE 案例研讨和真实行业命题，通过“高校 + 企业 + FDE”的协作方式，帮助学生把 AI 能力转化为可交付、可验收、可复盘的项目成果。</p>
           <div class="fde-info-grid">
             <article class="fde-info-card lift-on-hover">
               <h3>招募对象</h3>
-              <p>面向全校在读学生，不限专业。只要你对 Agent 有热情，有野心与好奇心，有沟通能力与执行力，都欢迎报名参加。</p>
+              <p>面向全校在读学生，不限专业。欢迎技术开发、产品设计、商务沟通、外语与行业研究等不同背景同学加入，组成能理解业务、能快速交付的小队。</p>
             </article>
             <article class="fde-info-card lift-on-hover">
               <h3>课程形式</h3>
@@ -226,15 +256,42 @@
                 <li>真实业务场景的 FDE 实战经验</li>
                 <li>Agent 工作流设计与开发能力</li>
                 <li>MVP 快速原型与交付能力</li>
-                <li>项目入库与 Demo Day 展示机会</li>
+                <li>项目入库、Demo Day 展示与企业试点机会</li>
               </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container">
+          <h2>第三期训练重点</h2>
+          <p class="section-lead">两次 FDE 交流形成的核心共识是：AI 落地的壁垒不在某一个工具，而在行业理解、流程拆解、客户沟通、交付稳定性和商业化判断。</p>
+          <div class="fde-method-grid">
+            <article class="fde-method-card lift-on-hover">
+              <span>01 / Role</span>
+              <h3>从“会 AI”到“会落地”</h3>
+              <p>训练营将帮助同学学习如何把老板、业务人员和工程师的碎片化表达，转成可开发、可验收的需求；同时理解权限、日志、异常兜底、数据隐私和本地部署等企业级约束。</p>
+            </article>
+            <article class="fde-method-card lift-on-hover">
+              <span>02 / Business</span>
+              <h3>从 Demo 到可收费项目</h3>
+              <p>每个项目都要思考为客户节省多少时间、减少多少风险、创造多少收益，并形成需求、流程、成本、ROI、验收和复盘模板，避免停留在一次性演示。</p>
+            </article>
+            <article class="fde-method-card lift-on-hover">
+              <span>03 / Collaboration</span>
+              <h3>校企合作真实命题</h3>
+              <p>企业提供小而明确的真实需求，FDE / 行业方帮助澄清，老师带学生组队完成 1-2 周 Demo / MVP，再由企业评估是否继续项目化、实习招聘或孵化。</p>
+            </article>
+            <article class="fde-method-card lift-on-hover">
+              <span>04 / Challenge</span>
+              <h3>48 小时 AI 落地挑战</h3>
+              <p>围绕可进入现场的企业场景，快速完成行业理解、业务流程梳理、AI 改造切入点设计和小型 Demo，用真实反馈训练 FDE 的判断与交付能力。</p>
             </article>
           </div>
         </section>
 
         <section class="section container" id="cohort3">
           <h2>第三期项目命题</h2>
-          <p class="section-lead">第三期训练营聚焦大模型（LLM）在实际行业场景中的应用落地，覆盖 9 个真实行业命题。</p>
+          <p class="section-lead">第三期训练营聚焦大模型（LLM）在实际行业场景中的应用落地，优先覆盖跨境电商、供应链、工业、HR、广告优化、知识管理和智能办公等 9 个方向。点击任一命题即可进入腾讯文档报名页面。</p>
           <div class="cohort3-list" id="cohort3-list"></div>
         </section>
 

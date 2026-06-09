@@ -33,6 +33,9 @@ assert.match(fde, /id="cohort3-list"/);
 assert.match(fde, /cohort3Projects/);
 assert.match(fde, /cohort3SignupUrl/);
 assert.match(fde, /<a class="cohort3-item lift-on-hover"/);
+assert.match(fde, /AI 落地型工程师/);
+assert.match(fde, /校企合作真实命题/);
+assert.match(fde, /48 小时 AI 落地挑战/);
 
 const projects = await text("projects.html");
 assert.match(projects, /id="project-grid"/);
@@ -54,6 +57,7 @@ assert.ok(partners.some((partner) => partner.title === "企业共创"));
 assert.ok(partners.some((partner) => partner.title === "投资对接"));
 assert.ok(cohort3Projects.some((project) => project.title === "跨境电商 LLM 应用案例与系统方案"));
 assert.ok(cohort3Projects.some((project) => project.title === "基于大模型的企业员工智能办公平台"));
+assert.ok(cohort3Projects.some((project) => project.summary.includes("ROI") || project.summary.includes("转化率")));
 assert.ok(projectData.length >= 6, "project library should expose at least six projects");
 assert.ok(projectData.every((project) => project.id && project.title && project.owner));
 assert.ok(projectData.every((project) => project.cohort), "each project should declare a cohort");
