@@ -244,7 +244,7 @@ img {
   line-height: 1.15;
   font-weight: 780;
   letter-spacing: 0;
-  text-wrap: nowrap;
+  text-wrap: balance;
   font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
   background: linear-gradient(100deg, #2185ff 8%, #7c4dff 54%, #5b38d7 88%);
   -webkit-background-clip: text;
@@ -1427,6 +1427,10 @@ img {
     linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
     rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(18px);
+}
+
+.cohort3-item:hover {
+  border-color: rgba(124, 77, 255, 0.3);
 }
 
 .cohort3-item__main h3 {
