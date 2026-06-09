@@ -210,6 +210,7 @@ const secondPhaseProjects = [
     stage: "原型中",
     owner: "刘芳",
     contact: "OPC 官方对接 / 负责人授权后开放",
+    github: "https://github.com/xy1p3ng/perler-beans-sketch-generator-editor",
     image: "assets/media/generated/beammind.png",
     summary: "通过自然语言或照片生成适合拼豆表达的图案，并转换成真实可拼的图纸。",
     problem: "拼豆创作者需要在审美、尺寸、色板和可制作性之间反复调整，门槛高且耗时。",
@@ -232,7 +233,7 @@ const secondPhaseProjects = [
     solution: "1）习题解答：覆盖信号与系统、通信原理、MIMO、OFDM、信道编码等核心课程，支持 LaTeX 输入与分步推导；2）标准检索：3GPP/ITU/IEEE 标准文档语义检索与自然语言查询；3）论文速递：arXiv/JSAC/TWC 等每日抓取、中文摘要生成与研究方向定制推送；4）报告生成：实验报告/技术调研/方案设计自动生成与多格式导出；5）网络规划：基站部署方案生成、网络切片配置、链路预算与覆盖评估。引入领域自适应 MCTS 算法实现工作流与工具的联合自动优化。",
     resources: ["无线通信导师", "标准文档资源", "后端开发", "企业工程案例"],
     video: "assets/media/videos/wireless-agent-demo.mp4",
-    team: ["Song yijie", "Xue zeyang", "Chen hongfan", "Xiaojingyu"],
+    team: ["宋熠杰", "薛泽扬", "陈泓帆", "肖婧羽"],
   },
   {
     id: "gu-you",
@@ -271,7 +272,7 @@ export const mentors = [
     title: "教授",
     email: "zsl@szu.edu.cn",
     lab: "PLAN Lab, Shenzhen University",
-    avatar: "assets/media/generated/shengli-zhang.webp",
+    avatar: "assets/media/张胜利.png",
     homepage: "https://ceie.szu.edu.cn/info/1017/2953.htm",
     research: "大语言模型智能体应用、智能体网络架构、数字资产与 Web3",
   },
@@ -354,7 +355,7 @@ export const demoDayProjects = [
   {
     id: "beammind",
     title: "BeamMind 智能拼豆图案生成平台",
-    github: null,
+    github: "https://github.com/xy1p3ng/perler-beans-sketch-generator-editor",
     poster: null,
     video: null,
     summary: "通过自然语言或照片生成适合拼豆表达的图案，并转换成真实可拼的图纸。",
@@ -371,7 +372,7 @@ export const demoDayProjects = [
     summary: "面向无线通信方向学生、网络工程师和科研人员的智能问答与报告交付平台。",
     image: "assets/media/generated/wireless-agent-poster.png",
     owner: "童景文",
-    team: ["Song yijie", "Xue zeyang", "Chen hongfan", "Xiaojingyu"],
+    team: ["宋熠杰", "薛泽扬", "陈泓帆", "肖婧羽"],
   },
   {
     id: "gu-you",

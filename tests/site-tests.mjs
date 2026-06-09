@@ -91,6 +91,14 @@ for (const [id, owner] of secondPhaseOwners) {
   assert.equal(demoDayProjects.find((project) => project.id === id)?.owner, owner, `${id} Demo Day card should use updated project owner`);
 }
 
+const beammindGithub = "https://github.com/xy1p3ng/perler-beans-sketch-generator-editor";
+assert.equal(projectData.find((project) => project.id === "beammind")?.github, beammindGithub);
+assert.equal(demoDayProjects.find((project) => project.id === "beammind")?.github, beammindGithub);
+
+const wirelessTeam = ["宋熠杰", "薛泽扬", "陈泓帆", "肖婧羽"];
+assert.deepEqual(projectData.find((project) => project.id === "wireless-agent")?.team, wirelessTeam);
+assert.deepEqual(demoDayProjects.find((project) => project.id === "wireless-agent")?.team, wirelessTeam);
+
 const videoProjects = demoDayProjects.filter((project) => project.video);
 assert.ok(videoProjects.length > 0, "Demo Day should include projects with videos");
 for (const demoProject of videoProjects) {

@@ -289,10 +289,10 @@ function renderProjectDetail() {
 
 function mentorCard(mentor) {
   return `
-    <a class="mentor-card lift-on-hover" href="${mentor.homepage}" target="_blank" rel="noopener noreferrer" aria-label="${mentor.name} 个人主页">
+    <a class="mentor-card lift-on-hover" data-mentor-id="${mentor.id}" href="${mentor.homepage}" target="_blank" rel="noopener noreferrer" aria-label="${mentor.name} 个人主页">
       <div class="mentor-card__head">
         <span class="mentor-avatar-frame">
-          <img class="mentor-avatar" src="${mentor.avatar}" alt="${mentor.name}" loading="lazy">
+          <img class="mentor-avatar${mentor.id === 'shengli-zhang' ? ' mentor-avatar--center' : ''}" src="${mentor.avatar}" alt="${mentor.name}" loading="lazy">
         </span>
         <div class="mentor-card__meta">
           <span class="mentor-name">${mentor.name}</span>

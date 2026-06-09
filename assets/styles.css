@@ -1580,6 +1580,31 @@ img {
   cursor: pointer;
 }
 
+.mentor-card[data-mentor-id="shengli-zhang"] {
+  background: linear-gradient(180deg, #f3efff, #ebe6ff);
+  border-color: rgba(124, 77, 255, 0.22);
+}
+
+.mentor-card[data-mentor-id="taotao-wang"] {
+  background: linear-gradient(180deg, #eff6ff, #dbeafe);
+  border-color: rgba(59, 130, 246, 0.22);
+}
+
+.mentor-card[data-mentor-id="xiaoxiao-wu"] {
+  background: linear-gradient(180deg, #e0f2fe, #bae6fd);
+  border-color: rgba(14, 165, 233, 0.22);
+}
+
+.mentor-card[data-mentor-id="fang-liu"] {
+  background: linear-gradient(180deg, #fff1f2, #ffe4e6);
+  border-color: rgba(244, 63, 94, 0.22);
+}
+
+.mentor-card[data-mentor-id="jingwen-tong"] {
+  background: linear-gradient(180deg, #ecfdf5, #d1fae5);
+  border-color: rgba(16, 185, 129, 0.22);
+}
+
 .mentor-card__head {
   display: flex;
   align-items: center;
@@ -1606,8 +1631,12 @@ img {
   height: 82px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center top;
   border: 1px solid rgba(105, 89, 190, 0.1);
+}
+
+.mentor-avatar--center {
+  object-position: center center;
 }
 
 .mentor-name {
