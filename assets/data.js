@@ -251,7 +251,7 @@ export const mentors = [
     lab: "PLAN Lab, Shenzhen University",
     avatar: "assets/media/generated/taotao-wang.webp",
     homepage: "https://ceie.szu.edu.cn/info/1018/2044.htm",
-    research: "区块链与 Web 3.0、可信 AI、无线通信、多智能体系统",
+    research: "可信与可验证人工智能、多智能体协同与智能网络系统、区块链与 Web 3.0 基础设施",
   },
   {
     id: "xiaoxiao-wu",
