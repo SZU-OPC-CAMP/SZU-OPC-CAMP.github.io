@@ -235,71 +235,7 @@
         <section class="section container" id="cohort3">
           <h2>第三期项目命题</h2>
           <p class="section-lead">第三期训练营聚焦大模型（LLM）在实际行业场景中的应用落地，覆盖 9 个真实行业命题。</p>
-          <ul class="cohort3-ul">
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>跨境电商 LLM 应用案例与系统方案</h3>
-                <p>文案、用户分析，投流</p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>自媒体营销 LLM 应用案例与系统方案</h3>
-                <p></p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>供应链数据收集与知识管理 LLM 应用案例与系统方案</h3>
-                <p>ontology，企业知识库、智能检索</p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>工业场景 LLM 应用案例与系统方案</h3>
-                <p>运维、质检、数字孪生，ontology，预测</p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>企业 HR 管理 LLM 应用案例与系统方案</h3>
-                <p>简历筛选，面试，日常管理，综合考评</p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>行业内算法优化 LLM 应用案例与系统方案</h3>
-                <p></p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>企业知识助手与文档智能处理</h3>
-                <p></p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>面向大模型的广告优化系统</h3>
-                <p></p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-            <li class="cohort3-item lift-on-hover">
-              <div class="cohort3-item__main">
-                <h3>基于大模型的企业员工智能办公平台</h3>
-                <p></p>
-              </div>
-              <div class="cohort3-item__team">待定</div>
-            </li>
-          </ul>
+          <div class="cohort3-list" id="cohort3-list"></div>
         </section>
 
         <section class="section container" id="contact">
@@ -321,7 +257,32 @@
         <div class="container">OPC + Agent AI 原生创业工场 · 第三期 FDE 招募</div>
       </footer>
     </div>
-    <script>
+    <script type="module">
+      import { cohort3Projects } from "./assets/data.js";
+
+      const cohort3SignupUrl = "https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY";
+      const cohort3List = document.getElementById("cohort3-list");
+      if (cohort3List) {
+        cohort3List.innerHTML = `
+          <ul class="cohort3-ul">
+            ${cohort3Projects.map((project) => {
+              const team = project.team.length > 0 ? project.team.join(" / ") : "待定";
+              return `
+                <li>
+                  <a class="cohort3-item lift-on-hover" href="${cohort3SignupUrl}" target="_blank" rel="noopener noreferrer" aria-label="报名 ${project.title}">
+                  <div class="cohort3-item__main">
+                    <h3>${project.title}</h3>
+                    ${project.summary ? `<p>${project.summary}</p>` : ""}
+                  </div>
+                  <div class="cohort3-item__team">${team}</div>
+                  </a>
+                </li>
+              `;
+            }).join("")}
+          </ul>
+        `;
+      }
+
       const toggle = document.getElementById('nav-toggle');
       const links = document.getElementById('nav-links');
       if (toggle && links) {

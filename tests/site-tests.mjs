@@ -29,8 +29,10 @@ assert.doesNotMatch(index, /id="cohort3"/, "third cohort preview should live on 
 const fde = await text("fde.html");
 assert.match(fde, /第三期 FDE 招募/);
 assert.match(fde, /第三期项目命题/);
-assert.match(fde, /跨境电商 LLM 应用案例与系统方案/);
-assert.match(fde, /基于大模型的企业员工智能办公平台/);
+assert.match(fde, /id="cohort3-list"/);
+assert.match(fde, /cohort3Projects/);
+assert.match(fde, /cohort3SignupUrl/);
+assert.match(fde, /<a class="cohort3-item lift-on-hover"/);
 
 const projects = await text("projects.html");
 assert.match(projects, /id="project-grid"/);
@@ -42,7 +44,7 @@ assert.match(detail, /assets\/main\.js/);
 
 const dataSource = await text("assets/data.js");
 const encoded = encodeURIComponent(dataSource);
-const { demoDayProjects, partners, projects: projectData, metrics } = await import(
+const { cohort3Projects, demoDayProjects, partners, projects: projectData, metrics } = await import(
   `data:text/javascript;charset=utf-8,${encoded}`
 );
 
@@ -50,6 +52,8 @@ assert.equal(metrics[0].value, "221");
 assert.ok(partners.some((partner) => partner.title === "高校合作"));
 assert.ok(partners.some((partner) => partner.title === "企业共创"));
 assert.ok(partners.some((partner) => partner.title === "投资对接"));
+assert.ok(cohort3Projects.some((project) => project.title === "跨境电商 LLM 应用案例与系统方案"));
+assert.ok(cohort3Projects.some((project) => project.title === "基于大模型的企业员工智能办公平台"));
 assert.ok(projectData.length >= 6, "project library should expose at least six projects");
 assert.ok(projectData.every((project) => project.id && project.title && project.owner));
 assert.ok(projectData.every((project) => project.cohort), "each project should declare a cohort");
