@@ -1252,7 +1252,6 @@ img {
   }
 
   .metrics,
-  .home-info-bar,
   .project-grid,
   .featured-carousel,
   .partner-grid,
@@ -1286,6 +1285,220 @@ img {
 
   .model-panel {
     grid-template-columns: 1fr;
+  }
+
+  /* Compact mobile sizing — more info per screen */
+  .section {
+    padding: 48px 0;
+  }
+
+  .section h2 {
+    font-size: clamp(26px, 7vw, 36px);
+    margin-bottom: 14px;
+  }
+
+  .section-lead {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .home-hero {
+    padding: 28px 0 18px;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(28px, 9vw, 42px);
+    margin: 18px 0 14px;
+  }
+
+  .home-hero p {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    margin-top: 18px;
+  }
+
+  .button,
+  .nav-cta {
+    min-height: 38px;
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .home-info-bar {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding-bottom: 36px;
+  }
+
+  .home-info-item {
+    min-height: 72px;
+    padding: 14px 18px;
+  }
+
+  .home-info-item span {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .home-info-item strong {
+    font-size: 20px;
+  }
+
+  .teaching-card {
+    padding: 18px;
+  }
+
+  .teaching-card span[aria-hidden="true"] {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .teaching-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .teaching-card p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .loop-step {
+    min-height: 90px;
+    padding: 14px;
+  }
+
+  .loop-step span {
+    font-size: 11px;
+  }
+
+  .loop-step strong {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+
+  .model-poster {
+    min-height: 200px;
+    padding: 10px;
+  }
+
+  .model-method {
+    padding: 18px;
+  }
+
+  .model-method h3 {
+    font-size: 20px;
+  }
+
+  .model-method p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .partner-tile {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .partner-tile h3 {
+    font-size: 18px;
+  }
+
+  .partner-tile p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .partner-tile ul {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .partner-tile li {
+    padding-top: 8px;
+    font-size: 13px;
+  }
+
+  .mentor-card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .mentor-avatar {
+    width: 52px;
+    height: 52px;
+  }
+
+  .mentor-name {
+    font-size: 15px;
+  }
+
+  .mentor-title {
+    font-size: 12px;
+  }
+
+  .mentor-research {
+    font-size: 13px;
+  }
+
+  .project-card__body {
+    padding: 16px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
+
+  .project-card p {
+    min-height: auto;
+    font-size: 13px;
+  }
+
+  .demo-day-card__body {
+    padding: 16px;
+  }
+
+  .demo-day-card__body h3 {
+    font-size: 18px;
+  }
+
+  .demo-day-card__body p {
+    min-height: auto;
+    font-size: 13px;
+  }
+
+  .stats-card {
+    padding: 16px;
+  }
+
+  .stats-card__head h3 {
+    font-size: 18px;
+  }
+
+  .stat-bar {
+    padding: 10px;
+  }
+
+  .background-chip {
+    min-height: 52px;
+    padding: 12px;
+  }
+
+  .cta-band {
+    padding: 20px;
+    gap: 18px;
+  }
+
+  .cta-band h2 {
+    font-size: 22px;
+  }
+
+  .cta-band p {
+    font-size: 14px;
   }
 }
 
