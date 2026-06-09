@@ -291,6 +291,60 @@ img {
   line-height: 1.25;
 }
 
+.teaching-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.teaching-card {
+  padding: 28px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(105, 89, 190, 0.1);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
+    rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.teaching-card:nth-child(1) {
+  border-top: 3px solid rgba(33, 150, 255, 0.55);
+}
+
+.teaching-card:nth-child(2) {
+  border-top: 3px solid rgba(124, 77, 255, 0.55);
+}
+
+.teaching-card:nth-child(3) {
+  border-top: 3px solid rgba(255, 79, 173, 0.55);
+}
+
+.teaching-card:nth-child(4) {
+  border-top: 3px solid rgba(0, 201, 167, 0.55);
+}
+
+.teaching-card span[aria-hidden="true"] {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-family: "Cascadia Mono", Consolas, monospace;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.teaching-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #111827;
+}
+
+.teaching-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
 .section {
   padding: 92px 0;
 }
@@ -1115,7 +1169,8 @@ img {
   .featured-carousel,
   .partner-grid,
   .stats-overview,
-  .background-cloud {
+  .background-cloud,
+  .teaching-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1205,7 +1260,8 @@ img {
   .stats-grid,
   .background-cloud,
   .resource-list,
-  .loop {
+  .loop,
+  .teaching-grid {
     grid-template-columns: 1fr;
   }
 
