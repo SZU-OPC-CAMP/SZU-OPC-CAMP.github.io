@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>第三期 FDE 招募 | OPC + Agent AI 原生创业工场</title>
+    <meta name="description" content="「普蓝」OPC + Agent 双创营 FDE 技能培训招募，面向全校学生，免费参与，实战导向。">
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      .fde-hero {
+        padding: 80px 0 50px;
+      }
+      .fde-hero h1 {
+        max-width: none;
+        margin: 0 0 28px;
+        font-size: clamp(38px, 5.2vw, 68px);
+        line-height: 1.1;
+        font-weight: 780;
+        text-wrap: balance;
+        font-family: Georgia, "Times New Roman", "Microsoft YaHei", serif;
+        background: linear-gradient(100deg, #2185ff 8%, #7c4dff 54%, #5b38d7 88%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .fde-hero p {
+        max-width: none;
+        margin: 0 0 28px;
+        color: #34445b;
+        font-size: 19px;
+        line-height: 1.7;
+      }
+      .fde-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border-radius: 999px;
+        background: rgba(124, 77, 255, 0.1);
+        color: var(--accent);
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 20px;
+      }
+      .fde-flow {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        background: rgba(105, 89, 190, 0.12);
+        margin: 34px 0;
+      }
+      .fde-flow-step {
+        min-height: 140px;
+        padding: 22px;
+        background: rgba(255, 255, 255, 0.74);
+        text-align: center;
+      }
+      .fde-flow-step:hover {
+        background: #fff;
+      }
+      .fde-flow-step span {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--accent);
+        font-family: "Cascadia Mono", Consolas, monospace;
+        font-size: 13px;
+      }
+      .fde-flow-step strong {
+        display: block;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+      .fde-cta-band {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        align-items: center;
+        padding: 42px;
+        border-radius: 28px;
+        border: 1px solid rgba(105, 89, 190, 0.16);
+        background:
+          radial-gradient(circle at 82% 16%, rgba(255, 79, 173, 0.2), transparent 32%),
+          linear-gradient(135deg, #2d6cff, #7c4dff 62%, #a55cff);
+        color: #fff;
+      }
+      .fde-cta-band h2 {
+        margin: 0 0 14px;
+        font-size: clamp(28px, 3.6vw, 48px);
+        line-height: 1.1;
+      }
+      .fde-cta-band p {
+        max-width: 560px;
+        margin: 0 0 24px;
+        color: rgba(255, 255, 255, 0.82);
+        line-height: 1.7;
+      }
+      .fde-qr {
+        text-align: center;
+      }
+      .fde-qr img {
+        width: 180px;
+        height: 180px;
+        border-radius: 18px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        background: #fff;
+        object-fit: contain;
+      }
+      .fde-qr p {
+        margin-top: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 14px;
+      }
+      .fde-info-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin: 34px 0;
+      }
+      .fde-info-card {
+        padding: 28px;
+        border: 1px solid rgba(105, 89, 190, 0.13);
+        border-radius: var(--radius);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.76)),
+          rgba(255, 255, 255, 0.8);
+      }
+      .fde-info-card h3 {
+        margin: 0 0 12px;
+        font-size: 22px;
+        color: #111827;
+      }
+      .fde-info-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .fde-info-card ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      @media (max-width: 980px) {
+        .fde-flow {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .fde-cta-band {
+          grid-template-columns: 1fr;
+        }
+        .fde-info-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 720px) {
+        .fde-flow {
+          grid-template-columns: 1fr;
+        }
+        .fde-cta-band {
+          padding: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav container" aria-label="主导航">
+          <a class="brand" href="index.html"><span class="brand-mark">OPC</span><span>FDE 第三期招募</span></a>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">菜单</button>
+          <div class="nav-links" id="nav-links">
+            <a href="index.html">首页</a>
+            <a href="index.html#model">训练营机制</a>
+            <a href="index.html#mentors">导师</a>
+            <a href="projects.html">项目库</a>
+            <a class="nav-cta" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">立即报名</a>
+          </div>
+        </nav>
+      </header>
+
+      <main>
+        <section class="fde-hero container">
+          <div class="fde-badge">第三期热招中 · 全程免费</div>
+          <h1>「普蓝」OPC + Agent 双创营<br>FDE 技能培训</h1>
+          <p>AI Agent 正在成为连接技术、业务与商业落地的新桥梁。<strong>FDE（前端部署工程师）</strong>是目前最典型的岗位，需要深入真实业务场景，完成需求访谈、流程拆解、Agent 方案设计、MVP 开发和客户反馈迭代。电子信息工程学院张胜利老师面向校内学生开设本训练营，已完成两期培训，取得了非常好的学生反馈以及行业影响。</p>
+          <div class="hero-actions">
+            <a class="button" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">填写报名表</a>
+            <a class="button secondary" href="#contact">扫码进群</a>
+          </div>
+        </section>
+
+        <section class="section container">
+          <h2>实战流程</h2>
+          <p class="section-lead">不只是教大家使用 AI 工具，更是帮助同学们学习从案例到交付的完整实战流程。</p>
+          <div class="fde-flow">
+            <div class="fde-flow-step lift-on-hover"><span>Step 01</span><strong>FDE 案例研讨</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 02</span><strong>需求拆解</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 03</span><strong>Agent 方案设计</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 04</span><strong>MVP 开发</strong></div>
+            <div class="fde-flow-step lift-on-hover"><span>Step 05</span><strong>Demo 演示</strong></div>
+          </div>
+        </section>
+
+        <section class="section container">
+          <h2>课程简介</h2>
+          <p class="section-lead">本次训练营将重点引入 FDE 案例研讨，通过真实业务场景驱动学习。</p>
+          <div class="fde-info-grid">
+            <article class="fde-info-card lift-on-hover">
+              <h3>招募对象</h3>
+              <p>面向全校在读学生，不限专业。只要你对 Agent 有热情，有野心与好奇心，有沟通能力与执行力，都欢迎报名参加。</p>
+            </article>
+            <article class="fde-info-card lift-on-hover">
+              <h3>课程形式</h3>
+              <ul>
+                <li>课程全程免费</li>
+                <li>需自带笔记本电脑参与实训</li>
+                <li>完成课程作业</li>
+                <li>导师制双周辅导</li>
+              </ul>
+            </article>
+            <article class="fde-info-card lift-on-hover">
+              <h3>你将获得</h3>
+              <ul>
+                <li>真实业务场景的 FDE 实战经验</li>
+                <li>Agent 工作流设计与开发能力</li>
+                <li>MVP 快速原型与交付能力</li>
+                <li>项目入库与 Demo Day 展示机会</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container" id="contact">
+          <div class="fde-cta-band">
+            <div>
+              <h2>立即报名第三期 FDE 训练营</h2>
+              <p>名额有限，先到先得。请填写腾讯文档报名表，并扫码进入微信招募群，获取最新课程安排与入营通知。</p>
+              <a class="button" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">填写报名表</a>
+            </div>
+            <div class="fde-qr">
+              <img src="assets/media/generated/fde-wechat-qr.jpg" alt="普蓝双创营第三期培训微信群二维码">
+              <p>扫码加入微信招募群</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">OPC + Agent AI 原生创业工场 · 第三期 FDE 招募</div>
+      </footer>
+    </div>
+    <script>
+      const toggle = document.getElementById('nav-toggle');
+      const links = document.getElementById('nav-links');
+      if (toggle && links) {
+        toggle.addEventListener('click', () => {
+          const open = links.classList.toggle('is-open');
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+      }
+    </script>
+  </body>
+</html>
