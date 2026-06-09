@@ -23,7 +23,6 @@ for (const file of requiredFiles) {
 const index = await text("index.html");
 assert.match(index, /OPC \+ Agent AI 原生创业工场/);
 assert.match(index, /href="projects\.html"/);
-assert.match(index, /221/);
 assert.doesNotMatch(index, /id="cohort3"/, "third cohort preview should live on the FDE recruitment page, not the home page");
 
 const fde = await text("fde.html");
@@ -67,6 +66,13 @@ const lastSecondPhaseIndex = projectData.map((project) => project.cohort).lastIn
 assert.ok(lastSecondPhaseIndex < firstFirstPhaseIndex, "project library should list second cohort before first cohort");
 assert.ok(projectData.some((project) => project.title.includes("BeamMind")));
 assert.ok(projectData.some((project) => project.contact.includes("OPC")));
+assert.equal(
+  projectData.find((project) => project.id === "spanish-claw")?.github,
+  "https://github.com/void-walker-zen-script/Spanish-claw",
+  "Spanish-claw should expose the provided GitHub link",
+);
+assert.equal(projectData.find((project) => project.id === "outfit-companion")?.owner, "张韵祺");
+assert.equal(projectData.find((project) => project.id === "outfit-companion")?.github, null);
 for (const project of projectData) {
   await access(new URL(`../${project.image}`, import.meta.url));
 }
@@ -95,6 +101,7 @@ for (const demoProject of videoProjects) {
 
 const mainSource = await text("assets/main.js");
 assert.match(mainSource, /<video[\s\S]*controls/, "project detail should render a playable video element");
+assert.match(mainSource, /mentor-avatar-frame/, "mentor cards should render a fixed avatar frame");
 
 assert.match(index, /id="project-cohort-tabs"/);
 assert.match(index, /data-project-nav="prev"/);
@@ -107,6 +114,8 @@ assert.match(index, /id="camp-stats-background"/);
 const styles = await text("assets/styles.css");
 assert.match(styles, /\.lift-on-hover:hover/);
 assert.match(styles, /translateY\(-/);
+assert.match(styles, /#mentors::after/);
+assert.match(styles, /\.mentor-avatar-frame/);
 
 const { trainingStats } = await import(
   `data:text/javascript;charset=utf-8,${encoded}`

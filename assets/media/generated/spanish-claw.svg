@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Spanish learning assistant project poster</title>
+  <desc id="desc">A clean project poster with Spanish learning cards, search panels, and warm accent colors.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff6e8"/>
+      <stop offset="0.52" stop-color="#eef7ff"/>
+      <stop offset="1" stop-color="#f4efff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff4f7b"/>
+      <stop offset="1" stop-color="#ffb000"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="54" fill="url(#bg)"/>
+  <circle cx="1010" cy="155" r="150" fill="#ffffff" opacity="0.54"/>
+  <circle cx="180" cy="680" r="190" fill="#ffffff" opacity="0.52"/>
+  <rect x="140" y="132" width="920" height="536" rx="40" fill="#fff" opacity="0.86"/>
+  <rect x="198" y="194" width="430" height="104" rx="28" fill="#fff7eb" stroke="#ffd59b"/>
+  <rect x="198" y="326" width="430" height="104" rx="28" fill="#f2f7ff" stroke="#c8dcff"/>
+  <rect x="198" y="458" width="430" height="104" rx="28" fill="#fff1f6" stroke="#ffc7dc"/>
+  <rect x="710" y="190" width="260" height="318" rx="34" fill="#182033"/>
+  <rect x="746" y="236" width="188" height="22" rx="11" fill="#ffffff" opacity="0.92"/>
+  <rect x="746" y="286" width="126" height="18" rx="9" fill="#ffffff" opacity="0.58"/>
+  <rect x="746" y="330" width="160" height="18" rx="9" fill="#ffffff" opacity="0.58"/>
+  <rect x="746" y="374" width="112" height="18" rx="9" fill="#ffffff" opacity="0.58"/>
+  <circle cx="884" cy="456" r="42" fill="url(#accent)"/>
+  <text x="232" y="260" fill="#182033" font-family="Segoe UI, Arial, sans-serif" font-size="38" font-weight="800">Hola, Agent</text>
+  <text x="232" y="392" fill="#182033" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">vocabulario / gramatica / corpus</text>
+  <text x="232" y="524" fill="#182033" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="700">Search, explain, practice</text>
+  <text x="140" y="90" fill="#182033" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="42" font-weight="800">西班牙语学习与检索助手</text>
+  <text x="140" y="724" fill="#536173" font-family="Segoe UI, Microsoft YaHei, sans-serif" font-size="25" font-weight="600">Spanish-claw · Language Learning Agent</text>
+</svg>

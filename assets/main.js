@@ -291,7 +291,9 @@ function mentorCard(mentor) {
   return `
     <a class="mentor-card lift-on-hover" href="${mentor.homepage}" target="_blank" rel="noopener noreferrer" aria-label="${mentor.name} 个人主页">
       <div class="mentor-card__head">
-        <img class="mentor-avatar" src="${mentor.avatar}" alt="${mentor.name}" loading="lazy">
+        <span class="mentor-avatar-frame">
+          <img class="mentor-avatar" src="${mentor.avatar}" alt="${mentor.name}" loading="lazy">
+        </span>
         <div class="mentor-card__meta">
           <span class="mentor-name">${mentor.name}</span>
           <span class="mentor-title">${mentor.title}</span>
