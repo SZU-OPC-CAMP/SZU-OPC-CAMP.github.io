@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>访问统计 | OPC + Agent AI</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <style>
+      .stats-wrap { max-width: 1200px; margin: 0 auto; padding: 80px 20px 40px; }
+      .stats-header { margin-bottom: 32px; }
+      .stats-header h1 { font-size: 32px; margin-bottom: 8px; }
+      .stats-header p { color: #666; font-size: 15px; }
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 32px;
+      }
+      .stat-card {
+        background: #fff;
+        border-radius: var(--radius);
+        padding: 20px;
+        border: 1px solid rgba(0,0,0,0.08);
+      }
+      .stat-value { font-size: 32px; font-weight: 700; color: var(--ink); }
+      .stat-label { font-size: 14px; color: #666; margin-top: 4px; }
+      .stats-table-wrap {
+        background: #fff;
+        border-radius: var(--radius);
+        border: 1px solid rgba(0,0,0,0.08);
+        overflow: hidden;
+      }
+      .stats-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      .stats-table th,
+      .stats-table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #f0f0f0;
+      }
+      .stats-table th {
+        background: #f8f9fa;
+        font-weight: 600;
+      }
+      .stats-table tr:hover { background: #f8f9fa; }
+      .stats-note {
+        margin-top: 20px;
+        padding: 16px;
+        background: #fffbeb;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #92400e;
+      }
+      @media (max-width: 768px) {
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="stats-wrap">
+      <div class="stats-header">
+        <h1>📊 访问统计</h1>
+        <p>本页展示当前浏览器本地记录的访问日志。如需跨用户统计，请配置后端存储。</p>
+      </div>
+
+      <div class="stats-grid" id="stats-summary"></div>
+
+      <div class="stats-table-wrap">
+        <table class="stats-table">
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>IP</th>
+              <th>地点</th>
+              <th>页面</th>
+            </tr>
+          </thead>
+          <tbody id="stats-body"></tbody>
+        </table>
+      </div>
+
+      <div class="stats-note">
+        <strong>说明：</strong>数据已接入 Supabase 云端存储，可统计所有访问者。
+        访问者的 IP 与地理位置通过 <code>ipapi.co</code> 获取，写入 Supabase 后在本页展示。
+      </div>
+    </div>
+
+    <script>
+      (async function () {
+        const SUPABASE_URL = "https://uwhntylvimegzdtsfwkc.supabase.co";
+        const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InV3aG50eWx2aW1lZ3pkdHNmd2tjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwNTI4MTcsImV4cCI6MjA5NjYyODgxN30.OEuJdbahdfXyy3MgWFTw2-vn3oZrHwH0MTBroyFCV98";
+
+        let logs = [];
+        try {
+          const res = await fetch(`${SUPABASE_URL}/rest/v1/visits?order=time.desc`, {
+            headers: { apikey: SUPABASE_KEY, "Content-Type": "application/json" }
+          });
+          logs = await res.json();
+        } catch (e) {
+          // 网络异常时回退到本地缓存
+          logs = JSON.parse(localStorage.getItem("opc_visit_log") || "[]");
+          document.querySelector(".stats-note").textContent = "⚠️ 无法连接 Supabase，当前显示本机缓存数据。";
+        }
+
+        const total = logs.length;
+        const uniqueIps = new Set(logs.map(l => l.ip)).size;
+        const todayStr = new Date().toDateString();
+        const todayVisits = logs.filter(l => new Date(l.time).toDateString() === todayStr).length;
+        const uniqueCities = new Set(logs.map(l => l.city)).size;
+
+        document.getElementById("stats-summary").innerHTML = `
+          <div class="stat-card"><div class="stat-value">${total}</div><div class="stat-label">总访问量</div></div>
+          <div class="stat-card"><div class="stat-value">${uniqueIps}</div><div class="stat-label">独立 IP</div></div>
+          <div class="stat-card"><div class="stat-value">${todayVisits}</div><div class="stat-label">今日访问</div></div>
+          <div class="stat-card"><div class="stat-value">${uniqueCities}</div><div class="stat-label">城市分布</div></div>
+        `;
+
+        const tbody = document.getElementById("stats-body");
+        tbody.innerHTML = logs.length
+          ? logs.map(log => `
+            <tr>
+              <td>${new Date(log.time).toLocaleString("zh-CN")}</td>
+              <td>${log.ip}</td>
+              <td>${[log.city, log.region, log.country].filter(Boolean).join("，")}</td>
+              <td>${log.page}</td>
+            </tr>
+          `).join("")
+          : '<tr><td colspan="4" style="text-align:center;color:#999;padding:24px;">暂无数据</td></tr>';
+      })();
+    </script>
+  </body>
+</html>
