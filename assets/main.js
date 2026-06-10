@@ -10,11 +10,17 @@ function projectCard(project) {
       GitHub
     </a>
   ` : "";
+  const videoBadge = project.video ? `
+    <span class="project-card__video-badge" title="含展示视频">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    </span>
+  ` : "";
   return `
     <article class="project-card lift-on-hover" data-category="${project.category}" data-cohort="${project.cohort}">
       <a class="project-card__media" href="project.html?id=${project.id}" aria-label="查看 ${project.title}">
         <img src="${project.image}" alt="${project.title}">
         <span>${project.stage}</span>
+        ${videoBadge}
       </a>
       <div class="project-card__body">
         <div class="meta-row">

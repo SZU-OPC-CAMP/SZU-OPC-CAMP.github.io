@@ -63,7 +63,7 @@
     <div class="stats-wrap">
       <div class="stats-header">
         <h1>📊 访问统计</h1>
-        <p>本页展示当前浏览器本地记录的访问日志。如需跨用户统计，请配置后端存储。</p>
+        <p>数据已接入 Supabase 云端存储，可统计所有访问者。</p>
       </div>
 
       <div class="stats-grid" id="stats-summary"></div>
@@ -100,7 +100,6 @@
           });
           logs = await res.json();
         } catch (e) {
-          // 网络异常时回退到本地缓存
           logs = JSON.parse(localStorage.getItem("opc_visit_log") || "[]");
           document.querySelector(".stats-note").textContent = "⚠️ 无法连接 Supabase，当前显示本机缓存数据。";
         }

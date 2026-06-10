@@ -214,6 +214,7 @@ const secondPhaseProjects = [
     contact: "OPC 官方对接 / 负责人授权后开放",
     github: "https://github.com/xy1p3ng/perler-beans-sketch-generator-editor",
     image: "assets/media/generated/beammind.png",
+    video: "assets/media/videos/beammind-demo.mp4",
     summary: "通过自然语言或照片生成适合拼豆表达的图案，并转换成真实可拼的图纸。",
     problem: "拼豆创作者需要在审美、尺寸、色板和可制作性之间反复调整，门槛高且耗时。",
     solution: "用生成式 AI 做风格转换，再通过量化引擎控制尺寸、颜色数量、色板约束和导出格式。",

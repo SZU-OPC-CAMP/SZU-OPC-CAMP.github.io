@@ -880,6 +880,21 @@ img {
   font-weight: 650;
 }
 
+.project-card__video-badge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255, 79, 79, 0.92);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(255, 79, 79, 0.3);
+}
+
 .project-card__body {
   padding: 24px;
 }
