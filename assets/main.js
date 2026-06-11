@@ -281,7 +281,7 @@ function renderProjectDetail() {
       <article class="lift-on-hover detail-poster-card">
         <h2>项目海报</h2>
         <figure>
-          <img src="${project.image}" alt="${project.title}">
+          <img src="${project.poster || project.image}" alt="${project.title}">
         </figure>
       </article>
       ${videoCard}
