@@ -742,11 +742,31 @@ img {
   padding: 30px;
 }
 
-.partner-tile:first-child {
+.partner-tile--zsl {
   background:
     radial-gradient(circle at 80% 0%, rgba(255, 79, 173, 0.22), transparent 40%),
     linear-gradient(135deg, rgba(76, 98, 255, 0.92), rgba(124, 77, 255, 0.9));
   color: #fff;
+}
+
+.partner-tile--ttwang {
+  background: linear-gradient(180deg, rgba(241, 248, 255, 0.92), rgba(219, 234, 254, 0.78));
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.partner-tile--liuf {
+  background: linear-gradient(180deg, rgba(255, 241, 242, 0.92), rgba(255, 228, 230, 0.78));
+  border-color: rgba(244, 63, 94, 0.2);
+}
+
+.partner-tile--tong {
+  background: linear-gradient(180deg, rgba(236, 253, 245, 0.92), rgba(209, 250, 229, 0.78));
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.partner-tile--zsl-soft {
+  background: linear-gradient(180deg, rgba(248, 246, 255, 0.92), rgba(241, 235, 255, 0.78));
+  border-color: rgba(124, 77, 255, 0.2);
 }
 
 .partner-tile p {
@@ -767,6 +787,13 @@ img {
   padding-top: 12px;
   border-top: 1px solid currentColor;
   opacity: 0.86;
+}
+
+.partner-tile--ttwang li,
+.partner-tile--liuf li,
+.partner-tile--tong li,
+.partner-tile--zsl-soft li {
+  opacity: 0.72;
 }
 
 .project-grid {
