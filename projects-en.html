@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Library | OPC + Agent AI Native Startup Workshop</title>
+    <meta name="description" content="Browse the OPC project library to view project owners, teams, stages, and resource needs.">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav container" aria-label="Main navigation">
+          <a class="brand" href="index-en.html"><span class="brand-mark">OPC</span><span>Project Library</span></a>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+          <div class="nav-links" id="nav-links">
+            <a href="index-en.html">Home</a>
+            <a href="index-en.html#resources">Resources</a>
+            <a href="projects-en.html">Projects</a>
+            <a class="nav-cta" href="index-en.html#contact">Partner with Us</a>
+            <a class="lang-switch" href="projects.html" title="切换到中文">中 / EN</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="container">
+        <section class="page-hero">
+          <h1>Student Project Library &amp; Collaboration Leads</h1>
+          <p>Explore AI-native projects emerging from the OPC bootcamp. Partners can filter projects by direction and view details on owners, teams, stages, and resource needs.</p>
+        </section>
+
+        <section class="section tight" aria-label="Project filters">
+          <div class="library-toolbar">
+            <div class="filters" id="project-filters">
+              <button class="filter-button is-active" data-filter="All" type="button">All</button>
+            </div>
+            <span class="project-count" id="project-count"></span>
+          </div>
+          <div class="project-grid" id="project-grid"></div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <div class="container">Project contact information defaults to OPC official matching; direct contact is available after owner authorization.</div>
+      </footer>
+    </div>
+    <script type="module" src="assets/main-en.js"></script>
+    <script src="assets/tracker.js"></script>
+  </body>
+</html>

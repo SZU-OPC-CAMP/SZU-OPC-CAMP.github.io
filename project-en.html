@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Project Details | OPC Project Library</title>
+    <meta name="description" content="View OPC bootcamp project details, owners, team members, and resource needs.">
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav container" aria-label="Main navigation">
+          <a class="brand" href="index-en.html"><span class="brand-mark">OPC</span><span>Project Details</span></a>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+          <div class="nav-links" id="nav-links">
+            <a href="index-en.html">Home</a>
+            <a href="projects-en.html">Projects</a>
+            <a class="nav-cta" href="index-en.html#contact">Partner with Us</a>
+            <a class="lang-switch" href="project.html" title="切换到中文">中 / EN</a>
+          </div>
+        </nav>
+      </header>
+
+      <main class="container" id="project-detail"></main>
+
+      <footer class="site-footer">
+        <div class="container">OPC + Agent AI Native Startup Workshop · Project Details</div>
+      </footer>
+    </div>
+    <script type="module" src="assets/main-en.js"></script>
+    <script src="assets/tracker.js"></script>
+    <script>
+      const langSwitch = document.querySelector('.lang-switch');
+      if (langSwitch) langSwitch.href = 'project.html' + location.search;
+    </script>
+  </body>
+</html>

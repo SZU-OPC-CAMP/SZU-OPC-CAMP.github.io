@@ -116,6 +116,25 @@ img {
   transform: translateY(-1px);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(105, 89, 190, 0.24);
+  color: var(--accent);
+  font-weight: 650;
+  font-size: 13px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.lang-switch:hover {
+  background: rgba(105, 89, 190, 0.1);
+}
+
 .button.secondary {
   border: 1px solid rgba(105, 89, 190, 0.16);
   background: rgba(255, 255, 255, 0.86);
