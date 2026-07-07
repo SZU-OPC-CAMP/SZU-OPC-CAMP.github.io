@@ -10,7 +10,8 @@ function projectCard(project) {
       GitHub
     </a>
   ` : "";
-  const videoBadge = project.video ? `
+  const hasVideo = project.video || (project.videos && project.videos.length > 0);
+  const videoBadge = hasVideo ? `
     <span class="project-card__video-badge" title="含展示视频">
       <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
     </span>
@@ -216,15 +217,26 @@ function renderProjectDetail() {
   const id = new URLSearchParams(window.location.search).get("id") || projects[0].id;
   const project = projects.find((item) => item.id === id) || projects[0];
   document.title = `${project.title} | OPC 项目库`;
-  const videoCard = project.video ? `
-      <article class="lift-on-hover detail-video-card">
-        <h2>项目展示视频</h2>
-        <video controls preload="metadata" poster="${project.image}">
-          <source src="${project.video}" type="video/mp4">
-          当前浏览器不支持视频播放，请下载视频文件查看。
-        </video>
-      </article>
-  ` : "";
+  function renderVideoCard(project) {
+    const sources = project.videos || (project.video ? [project.video] : []);
+    const descriptions = project.videoDescriptions || [];
+    if (!sources.length) return "";
+    return sources.map((src, index) => {
+      const title = sources.length > 1 ? `项目展示视频（${index + 1} / ${sources.length}）` : "项目展示视频";
+      const desc = descriptions[index] ? `<p>${descriptions[index]}</p>` : "";
+      return `
+        <article class="lift-on-hover detail-video-card">
+          <h2>${title}</h2>
+          ${desc}
+          <video controls preload="metadata" poster="${project.image}">
+            <source src="${src}" type="video/mp4">
+            当前浏览器不支持视频播放，请下载视频文件查看。
+          </video>
+        </article>
+      `;
+    }).join("");
+  }
+  const videoCard = renderVideoCard(project);
 
   node.innerHTML = `
     <section class="detail-hero detail-hero--text-only">
@@ -325,7 +337,7 @@ function demoDayCard(project) {
   if (project.poster) {
     links.push(`<a class="demo-day-link" href="${project.poster}" target="_blank">宣传海报</a>`);
   }
-  if (project.video) {
+  if (project.video || (project.videos && project.videos.length > 0)) {
     links.push(`<span class="demo-day-badge">含展示视频</span>`);
   }
   return `

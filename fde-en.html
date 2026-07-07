@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Cohort 3 FDE Recruitment | OPC + Agent AI Native Startup Workshop</title>
-    <meta name="description" content="Pulan OPC + Agent Dual-Creation Camp FDE skills training recruitment. Open to all students, free to join, practice-oriented.">
+    <title>Cohort 3 FDE | OPC + Agent AI Native Startup Workshop</title>
+    <meta name="description" content="Pulan OPC + Agent Dual-Creation Camp FDE skills training. Practice-oriented, open to all students.">
     <link rel="stylesheet" href="assets/styles.css">
     <style>
       .fde-hero {
@@ -198,14 +198,14 @@
     <div class="site-shell">
       <header class="topbar">
         <nav class="nav container" aria-label="Main navigation">
-          <a class="brand" href="index-en.html"><span class="brand-mark">OPC</span><span>FDE Cohort 3 Recruitment</span></a>
+          <a class="brand" href="index-en.html"><span class="brand-mark">OPC</span><span>FDE Cohort 3</span></a>
           <button class="nav-toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
           <div class="nav-links" id="nav-links">
             <a href="index-en.html">Home</a>
             <a href="index-en.html#model">Bootcamp Mechanism</a>
             <a href="index-en.html#mentors">Mentors</a>
             <a href="projects-en.html">Projects</a>
-            <a class="nav-cta" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">Apply Now</a>
+            <a class="nav-cta" href="index-en.html#contact">Partner with Us</a>
             <a class="lang-switch" href="fde.html" title="切换到中文">中 / EN</a>
           </div>
         </nav>
@@ -213,12 +213,10 @@
 
       <main>
         <section class="fde-hero container">
-          <div class="fde-badge">Cohort 3 Open · Free to Join</div>
           <h1>Pulan OPC + Agent Dual-Creation Camp<br>FDE Skills Training</h1>
           <p>AI Agents are becoming the new bridge connecting technology, business, and commercial delivery. <strong>FDE (AI Field Delivery Engineer)</strong> is not just about writing code, nor is it only pre-sales or product work; it is about going deep into real enterprise sites to complete requirement interviews, workflow breakdown, Agent / RAG / automation solution design, MVP delivery, and commercial validation. Led by Professor Zhang Shengli’s team at the College of Electronic and Information Engineering, this bootcamp has completed two cohorts and continues to connect enterprise problem statements, industry mentors, and project incubation resources.</p>
           <div class="hero-actions">
-            <a class="button" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">Fill Out Application</a>
-            <a class="button secondary" href="#contact">Scan to Join Group</a>
+            <a class="button secondary" href="#contact">Contact Us</a>
           </div>
         </section>
 
@@ -239,13 +237,12 @@
           <p class="section-lead">This cohort will focus on introducing FDE case studies and real industry problem statements. Through the "University + Enterprise + FDE" collaboration model, students will transform AI capabilities into deliverable, verifiable, and reviewable project outcomes.</p>
           <div class="fde-info-grid">
             <article class="fde-info-card lift-on-hover">
-              <h3>Who Can Apply</h3>
+              <h3>Who It's For</h3>
               <p>Open to all enrolled students, regardless of major. We welcome students from technology, product design, business communication, foreign languages, and industry research to form teams that understand business and can deliver quickly.</p>
             </article>
             <article class="fde-info-card lift-on-hover">
               <h3>Program Format</h3>
               <ul>
-                <li>Completely free of charge</li>
                 <li>Bring your own laptop for hands-on sessions</li>
                 <li>Complete program assignments</li>
                 <li>Biweekly mentor coaching</li>
@@ -292,33 +289,32 @@
 
         <section class="section container" id="cohort3">
           <h2>Cohort 3 Project Problem Statements</h2>
-          <p class="section-lead">Cohort 3 focuses on large language model (LLM) application deployment in real industry scenarios, prioritizing 9 directions including cross-border e-commerce, supply chain, industry, HR, ad optimization, knowledge management, and smart office. Click any topic to enter the Tencent Docs registration page.</p>
+          <p class="section-lead">Cohort 3 focuses on large language model (LLM) application deployment in real industry scenarios, prioritizing 9 directions including cross-border e-commerce, supply chain, industry, HR, ad optimization, knowledge management, and smart office.</p>
           <div class="cohort3-list" id="cohort3-list"></div>
         </section>
 
         <section class="section container" id="contact">
           <div class="fde-cta-band">
             <div>
-              <h2>Apply for Cohort 3 FDE Bootcamp Now</h2>
-              <p>Limited spots available, first come first served. Please fill out the Tencent Docs application form and scan the QR code to join the WeChat recruitment group for the latest schedule and admission notices.</p>
-              <a class="button" href="https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY" target="_blank" rel="noopener noreferrer">Fill Out Application</a>
+              <h2>Contact Cohort 3 FDE Bootcamp</h2>
+              <p>For enterprise problem statements, mentor collaboration, project pipeline, or course co-design, please reach out through the contact channel below.</p>
+              <a class="button" href="index-en.html#contact">Contact Us</a>
             </div>
             <div class="fde-qr">
               <img src="assets/media/generated/fde-wechat-qr.jpg" alt="Pulan Dual-Creation Camp Cohort 3 WeChat Group QR Code">
-              <p>Scan to join the WeChat recruitment group</p>
+              <p>Scan to join the WeChat group</p>
             </div>
           </div>
         </section>
       </main>
 
       <footer class="site-footer">
-        <div class="container">OPC + Agent AI Native Startup Workshop · Cohort 3 FDE Recruitment</div>
+        <div class="container">OPC + Agent AI Native Startup Workshop · Cohort 3 FDE</div>
       </footer>
     </div>
     <script type="module">
-      import { cohort3Projects } from "./assets/data-en.js";
+      import { cohort3Projects } from "./assets/data-en.js?v=4";
 
-      const cohort3SignupUrl = "https://docs.qq.com/sheet/DYkpreFNVcW1EaUhY";
       const cohort3List = document.getElementById("cohort3-list");
       if (cohort3List) {
         cohort3List.innerHTML = `
@@ -327,13 +323,13 @@
               const team = project.team.length > 0 ? project.team.join(" / ") : "TBD";
               return `
                 <li>
-                  <a class="cohort3-item lift-on-hover" href="${cohort3SignupUrl}" target="_blank" rel="noopener noreferrer" aria-label="Apply for ${project.title}">
+                  <div class="cohort3-item lift-on-hover">
                   <div class="cohort3-item__main">
                     <h3>${project.title}</h3>
                     ${project.summary ? `<p>${project.summary}</p>` : ""}
                   </div>
                   <div class="cohort3-item__team">${team}</div>
-                  </a>
+                  </div>
                 </li>
               `;
             }).join("")}
