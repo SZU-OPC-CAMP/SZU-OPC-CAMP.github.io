@@ -26,12 +26,12 @@ assert.match(index, /href="projects\.html"/);
 assert.doesNotMatch(index, /id="cohort3"/, "third cohort preview should live on the FDE recruitment page, not the home page");
 
 const fde = await text("fde.html");
-assert.match(fde, /第三期 FDE 招募/);
+assert.match(fde, /FDE 技能培训/);
 assert.match(fde, /第三期项目命题/);
 assert.match(fde, /id="cohort3-list"/);
 assert.match(fde, /cohort3Projects/);
-assert.match(fde, /cohort3SignupUrl/);
-assert.match(fde, /<a class="cohort3-item lift-on-hover"/);
+assert.match(fde, /href="index\.html#contact">合作对接<\/a>/);
+assert.match(fde, /<div class="cohort3-item lift-on-hover"/);
 assert.match(fde, /AI 落地型工程师/);
 assert.match(fde, /校企合作真实命题/);
 assert.match(fde, /48 小时 AI 落地挑战/);
